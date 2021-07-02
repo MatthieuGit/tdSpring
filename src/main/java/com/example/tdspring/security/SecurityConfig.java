@@ -39,6 +39,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.formLogin();
         http.csrf().disable();
         http.authorizeRequests().antMatchers("/login/**","register/**").permitAll();
+        http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/articles/**").hasRole("ADMIN");
+        http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/contenu/**").hasRole("ADMIN");
+        http.authorizeRequests().antMatchers(HttpMethod.GET, "/articles/**").hasRole("EDITEUR");
+        http.authorizeRequests().antMatchers(HttpMethod.GET, "/contenu/**").hasRole("EDITEUR");
         http.authorizeRequests().anyRequest().authenticated();
 
     }

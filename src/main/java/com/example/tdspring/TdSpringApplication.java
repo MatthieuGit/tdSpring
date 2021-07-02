@@ -32,7 +32,7 @@ public class TdSpringApplication implements CommandLineRunner {
         accountService.saveRole(new AppRole("ADMIN"));
         accountService.saveRole(new AppRole("EDITEUR"));
         accountService.addRoleToUser("admin", "ADMIN");
-        accountService.addRoleToUser("editeur", "editeur");
+        accountService.addRoleToUser("editeur", "EDITEUR");
     }
 
 }

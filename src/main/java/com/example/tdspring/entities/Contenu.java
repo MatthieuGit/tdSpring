@@ -28,6 +28,9 @@ public class Contenu {
     @JoinColumn(name="idfile",nullable = false)
     private Article article;
 
+    public Contenu() {
+    }
+
     public Contenu(String titre, String texte, String auteur, String url, Article article) {
         this.titre = titre;
         this.texte = texte;

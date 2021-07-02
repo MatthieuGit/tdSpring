@@ -8,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.Table;
 
 import com.sun.istack.internal.NotNull;
 
@@ -30,8 +29,7 @@ public class AppUser {
     public AppUser() {
     }
 
-    public AppUser(long id, String password, String username) {
-        this.id = id;
+    public AppUser(String password, String username) {
         this.password = password;
         this.username = username;
     }
